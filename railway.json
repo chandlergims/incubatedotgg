@@ -3,6 +3,9 @@
   "build": {
     "builder": "NIXPACKS"
   },
+  "variables": {
+    "NODE_VERSION": "20"
+  },
   "deploy": {
     "numReplicas": 1,
     "sleepApplication": false,
