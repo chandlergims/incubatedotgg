@@ -9,7 +9,7 @@ const https = require('https');
 const http = require('http');
 
 // Get the base URL from environment variables
-const BASE_URL = process.env.RAILWAY_STATIC_URL || process.env.VERCEL_URL || process.env.BASE_URL || 'http://localhost:3000';
+const BASE_URL = process.env.API_URL || 'https://receiptsdotfun-production.up.railway.app';
 
 // Ensure the URL has the correct protocol
 const apiUrl = BASE_URL.startsWith('http') ? BASE_URL : `https://${BASE_URL}`;
