@@ -1,5 +1,46 @@
 @import "tailwindcss";
 
+/* SNPro Font Face Declarations */
+@font-face {
+  font-family: 'SNPro';
+  src: url('/SNPro/SNPro-Regular.woff2') format('woff2'),
+       url('/SNPro/SNPro-Regular.woff') format('woff'),
+       url('/SNPro/SNPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SNPro';
+  src: url('/SNPro/SNPro-Medium.woff2') format('woff2'),
+       url('/SNPro/SNPro-Medium.woff') format('woff'),
+       url('/SNPro/SNPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SNPro';
+  src: url('/SNPro/SNPro-Semibold.woff2') format('woff2'),
+       url('/SNPro/SNPro-Semibold.woff') format('woff'),
+       url('/SNPro/SNPro-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SNPro';
+  src: url('/SNPro/SNPro-Bold.woff2') format('woff2'),
+       url('/SNPro/SNPro-Bold.woff') format('woff'),
+       url('/SNPro/SNPro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,19 +49,16 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: 'SNPro', system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: #ffffff;
+  color: #171717;
+  font-family: 'SNPro', system-ui, -apple-system, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+* {
+  font-family: 'SNPro', system-ui, -apple-system, sans-serif;
 }
