@@ -10,12 +10,5 @@
     "numReplicas": 1,
     "sleepApplication": false,
     "restartPolicyType": "ON_FAILURE"
-  },
-  "cron": [
-    {
-      "name": "update-prices",
-      "schedule": "*/5 * * * *",
-      "command": "node scripts/update-prices-cron.js"
-    }
-  ]
+  }
 }
