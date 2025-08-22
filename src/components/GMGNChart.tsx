@@ -64,7 +64,7 @@ export default function GMGNChart({
       />
       {/* Custom branding overlay */}
       <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-br from-gray-50 to-gray-100 border-t border-gray-200 flex items-center justify-center shadow-sm">
-        <span className="text-sm font-medium text-gray-700">powered by receipts.fun</span>
+        <span className="text-sm font-medium text-gray-700">powered by metpad.fun</span>
       </div>
     </div>
   );

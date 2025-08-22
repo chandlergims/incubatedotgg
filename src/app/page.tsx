@@ -99,9 +99,9 @@ export default function Home() {
 
         {/* Loading State */}
         {loading && (
-          <div className="max-w-lg mx-auto pt-8">
+          <div className="max-w-7xl mx-auto pt-8">
             {/* Search Bar Skeleton */}
-            <div className="mb-8">
+            <div className="max-w-lg mx-auto mb-8">
               <div className="relative">
                 <div className="h-12 bg-gray-200 rounded-lg animate-pulse"></div>
               </div>
@@ -112,37 +112,34 @@ export default function Home() {
               <div className="h-4 bg-gray-200 rounded w-16 animate-pulse"></div>
             </div>
             
-            {/* Token Cards Skeleton */}
-            <div className="space-y-4">
-              {[...Array(5)].map((_, index) => (
+            {/* Token Cards Skeleton - Grid Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {[...Array(12)].map((_, index) => (
                 <div
                   key={index}
-                  className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow animate-pulse"
+                  className="bg-white border border-gray-200 rounded-lg p-3 shadow-sm animate-pulse"
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center">
+                    <div className="flex items-center gap-3">
                       {/* Token Image Skeleton */}
-                      <div className="w-12 h-12 bg-gray-200 rounded-full mr-3"></div>
+                      <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
                       
                       <div>
                         {/* Token Symbol Skeleton */}
-                        <div className="h-5 bg-gray-200 rounded w-16 mb-1"></div>
-                        {/* Token Name Skeleton */}
-                        <div className="h-4 bg-gray-200 rounded w-24"></div>
+                        <div className="h-4 bg-gray-200 rounded w-12 mb-1"></div>
+                        {/* Token Address Skeleton */}
+                        <div className="h-3 bg-gray-200 rounded w-16"></div>
                       </div>
                     </div>
                     
                     <div className="text-right">
-                      {/* Market Cap Skeleton */}
-                      <div className="h-5 bg-gray-200 rounded w-20 mb-1"></div>
-                      {/* Price Change Skeleton */}
-                      <div className="h-4 bg-gray-200 rounded w-16"></div>
+                      {/* Timestamp Skeleton */}
+                      <div className="h-3 bg-gray-200 rounded w-12 mb-1"></div>
+                      {/* Total Raised Skeleton */}
+                      <div className="h-4 bg-gray-200 rounded w-16 mb-1"></div>
+                      {/* Label Skeleton */}
+                      <div className="h-3 bg-gray-200 rounded w-14"></div>
                     </div>
-                  </div>
-                  
-                  {/* Progress Bar Skeleton */}
-                  <div className="mt-3">
-                    <div className="h-2 bg-gray-200 rounded-full"></div>
                   </div>
                 </div>
               ))}
@@ -213,7 +210,7 @@ export default function Home() {
 
         {/* Tokens List */}
         {!loading && !error && filteredTokens.length > 0 && (
-          <div className="max-w-lg mx-auto pt-8">
+          <div className="max-w-7xl mx-auto pt-8">
             {/* Recent Tokens Section */}
             <div className="mb-6">
               <h2 className="text-gray-400 text-sm font-bold uppercase tracking-wider">
@@ -221,7 +218,7 @@ export default function Home() {
               </h2>
             </div>
             
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {filteredTokens.map((token: Token) => (
                 <TokenCard key={token.id} token={token} />
               ))}

@@ -38,8 +38,8 @@ export default function CreatorRewardsModal({ isOpen, onClose }: CreatorRewardsM
               <div className="space-y-2 text-[9px]">
                 <div className="grid grid-cols-6 gap-2 items-center py-1 bg-green-50 rounded">
                   <div className="flex items-center gap-1">
-                    <img src="/Untitled design (60).png" alt="receipts.fun" className="w-3 h-3 rounded object-cover" />
-                    <span className="font-medium text-[8px] text-green-800">receipts.fun</span>
+                    <img src="/Untitled design (60).png" alt="metpad.fun" className="w-3 h-3 rounded object-cover" />
+                    <span className="font-medium text-[8px] text-green-800">metpad.fun</span>
                   </div>
                   <div className="font-mono text-gray-700">2%</div>
                   <div className="font-mono text-green-700 font-bold">1.8%</div>
@@ -102,7 +102,7 @@ export default function CreatorRewardsModal({ isOpen, onClose }: CreatorRewardsM
           {/* Summary */}
           <div className="space-y-2 text-gray-800 text-sm leading-relaxed mb-4">
             <p>
-              <strong>receipts.fun</strong> offers the highest creator rewards - up to 90% of trading fees generated from the LP.
+              <strong>metpad.fun</strong> offers the highest creator rewards - up to 90% of trading fees generated from the LP.
             </p>
             <p>
               upon migration, the creator will receive a DAMM V2 LP position representing their share of the locked liquidity and can claim fees directly from <a href="https://app.meteora.ag/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">app.meteora.ag</a>.

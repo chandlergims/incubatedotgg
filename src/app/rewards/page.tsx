@@ -42,10 +42,10 @@ export default function RewardsPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-6 py-2 border-b border-dashed border-gray-300">
                   <div className="text-sm text-gray-900 font-medium flex items-center gap-2">
-                    <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center text-white text-xs font-bold" title="receipts.fun">
-                      R
+                    <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center text-white text-xs font-bold" title="metpad.fun">
+                      M
                     </div>
-                    receipts.fun
+                    metpad.fun
                   </div>
                   <div className="text-sm font-mono text-gray-900">2%</div>
                   <div className="text-sm font-mono text-green-600 font-bold">1.8%</div>

@@ -17,20 +17,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "receipts.fun",
+  title: "metpad.fun",
   description: "The most creator-friendly token launch platform with dynamic bonding curves and meteora integration",
   icons: {
     icon: "/Untitled design (60).png",
     apple: "/Untitled design (60).png",
   },
   openGraph: {
-    title: "receipts.fun",
+    title: "metpad.fun",
     description: "The most creator-friendly token launch platform with dynamic bonding curves and meteora integration",
     images: ["/Untitled design (60).png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "receipts.fun",
+    title: "metpad.fun",
     description: "The most creator-friendly token launch platform with dynamic bonding curves and meteora integration",
     images: ["/Untitled design (60).png"],
   },

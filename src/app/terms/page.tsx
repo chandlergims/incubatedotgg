@@ -11,14 +11,14 @@ export default function TermsPage() {
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-4">1. Acceptance of Terms</h2>
               <p>
-                By accessing and using receipts.fun (the "Platform"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                By accessing and using metpad.fun (the "Platform"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-4">2. Description of Service</h2>
               <p>
-                receipts.fun is a decentralized token launch platform that enables users to create, trade, and manage cryptocurrency tokens on the Solana blockchain. The platform utilizes bonding curve mechanisms and integrates with Meteora for enhanced liquidity provision.
+                metpad.fun is a decentralized token launch platform that enables users to create, trade, and manage cryptocurrency tokens on the Solana blockchain. The platform utilizes bonding curve mechanisms and integrates with Meteora for enhanced liquidity provision.
               </p>
             </section>
 
@@ -57,21 +57,21 @@ export default function TermsPage() {
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-4">6. Intellectual Property</h2>
               <p>
-                The platform and its original content, features, and functionality are owned by receipts.fun and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
+                The platform and its original content, features, and functionality are owned by metpad.fun and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-4">7. Limitation of Liability</h2>
               <p>
-                In no event shall receipts.fun, its directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, punitive, consequential, or special damages arising from your use of the platform, even if we have been advised of the possibility of such damages.
+                In no event shall metpad.fun, its directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, punitive, consequential, or special damages arising from your use of the platform, even if we have been advised of the possibility of such damages.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-4">8. Indemnification</h2>
               <p>
-                You agree to defend, indemnify, and hold harmless receipts.fun and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees).
+                You agree to defend, indemnify, and hold harmless metpad.fun and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees).
               </p>
             </section>
 

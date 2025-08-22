@@ -211,7 +211,7 @@ export default function Sidebar() {
               {/* Content */}
               <div className="space-y-4 text-gray-700 leading-tight">
                 <p>
-                  receipts.fun creates dynamic bonding curves with meteora integration, offering the most creator-friendly token launch platform in the industry.
+                  metpad.fun creates dynamic bonding curves with meteora integration, offering the most creator-friendly token launch platform in the industry.
                 </p>
                 <p>
                   our platform features 2% trading fees after migration, where creators can choose their share up to 90% - the highest in the industry.

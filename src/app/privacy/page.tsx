@@ -11,7 +11,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-4">1. Information We Collect</h2>
               <p className="mb-4">
-                receipts.fun is committed to protecting your privacy. As a decentralized platform, we collect minimal personal information:
+                metpad.fun is committed to protecting your privacy. As a decentralized platform, we collect minimal personal information:
               </p>
               <ul className="list-disc list-inside space-y-2">
                 <li><strong>Wallet Addresses:</strong> Public blockchain addresses used for transactions</li>
