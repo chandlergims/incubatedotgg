@@ -342,7 +342,7 @@ export default function CreatePage() {
                     onChange={(e) => setCreatorFeePercentage(parseInt(e.target.value))}
                     className="w-full h-2 rounded-lg appearance-none cursor-pointer slider-dark"
                     style={{
-                      background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${(creatorFeePercentage / 90) * 100}%, #374151 ${(creatorFeePercentage / 90) * 100}%, #374151 100%)`
+                      background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${(creatorFeePercentage / 90) * 100}%, #2a2a2a ${(creatorFeePercentage / 90) * 100}%, #2a2a2a 100%)`
                     }}
                   />
                   <style jsx>{`
@@ -353,7 +353,7 @@ export default function CreatePage() {
                       border-radius: 50%;
                       background: #3b82f6;
                       cursor: pointer;
-                      border: 2px solid #1f2937;
+                      border: 2px solid #1a1a1a;
                     }
                     .slider-dark::-moz-range-thumb {
                       height: 20px;
@@ -361,7 +361,7 @@ export default function CreatePage() {
                       border-radius: 50%;
                       background: #3b82f6;
                       cursor: pointer;
-                      border: 2px solid #1f2937;
+                      border: 2px solid #1a1a1a;
                     }
                   `}</style>
                 </div>
