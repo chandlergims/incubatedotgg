@@ -235,14 +235,30 @@ export default function Home() {
               <h2 className="text-gray-400 text-sm font-bold uppercase tracking-wider mb-6">
                 AGENTS WE BROUGHT TO LIFE
               </h2>
-              <div className="bg-[#1a1a1a] rounded-lg p-6 text-center">
-                <div className="w-16 h-16 bg-[#2a2a2a] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Robot className="w-8 h-8 text-white" />
+              
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3">
+                {/* Myla card with flashing animation */}
+                <div className="bg-[#1a1a1a] rounded-lg p-3 aspect-square relative overflow-hidden">
+                  {/* Flashing border animation */}
+                  <div className="absolute inset-0 rounded-lg border-2 border-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 animate-pulse opacity-50"></div>
+                  <div className="absolute inset-[2px] bg-[#1a1a1a] rounded-lg"></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 h-full flex flex-col items-center justify-center text-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-2">
+                      <Robot className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-white text-sm font-bold mb-1">Myla</h3>
+                    <div className="text-xs text-gray-300 animate-pulse">
+                      Incubation
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-white text-lg font-semibold mb-2">No Agents Yet</h3>
+              </div>
+              
+              <div className="text-center mt-4">
                 <p className="text-gray-400 text-sm">
-                  Incubated agents show up here. Learn how you can have your agent incubated and brought to life.
-                  <br />
+                  Learn how you can have your agent incubated and brought to life.{' '}
                   <button
                     onClick={() => {
                       // Trigger the sidebar modal by dispatching a custom event
