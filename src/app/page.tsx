@@ -36,6 +36,9 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [mintSearchQuery, setMintSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('newest');
+  
+  // Check if creation is enabled
+  const creationEnabled = process.env.NEXT_PUBLIC_CREATION_ENABLED === 'true';
 
   const fetchTokens = async (sort = 'newest') => {
     try {
@@ -182,13 +185,18 @@ export default function Home() {
             {/* Top button row */}
             <div className="flex items-center justify-center mb-8">
               <button
-                onClick={() => router.push('/create')}
-                className="flex items-center gap-2 px-6 py-3 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-xl text-white transition-colors cursor-pointer"
+                onClick={creationEnabled ? () => router.push('/create') : undefined}
+                disabled={!creationEnabled}
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl text-white transition-colors ${
+                  creationEnabled 
+                    ? 'bg-[#1a1a1a] hover:bg-[#2a2a2a] cursor-pointer' 
+                    : 'bg-[#2a2a2a] cursor-not-allowed opacity-60'
+                }`}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-                <span className="font-medium">mint an agent</span>
+                <span className="font-medium">{creationEnabled ? 'mint an agent' : 'coming soon'}</span>
               </button>
             </div>
 

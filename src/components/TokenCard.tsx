@@ -125,7 +125,7 @@ export default function TokenCard({ token }: TokenCardProps) {
             <span>Bonding</span>
             <span>{bondingProgress.toFixed(0)}%</span>
           </div>
-          <div className="w-full bg-gray-900 rounded-full h-1">
+          <div className="w-full bg-[#2a2a2a] rounded-full h-1">
             <div 
               className="bg-green-400 h-1 rounded-full transition-all duration-300"
               style={{ width: `${Math.min(bondingProgress, 100)}%` }}
