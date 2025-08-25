@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const searchQuery = searchParams.get('search') || '';
     const sortBy = searchParams.get('sortBy') || 'newest'; // newest, oldest, name
-    const limitCount = parseInt(searchParams.get('limit') || '20');
+    const limitCount = parseInt(searchParams.get('limit') || '100');
     const creatorFilter = searchParams.get('creator') || '';
 
     console.log('🔍 Fetching tokens with params:', { searchQuery, sortBy, limitCount, creatorFilter });
