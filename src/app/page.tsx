@@ -44,11 +44,11 @@ export default function Home() {
     try {
       setLoading(true);
       
-      // Fetch recent tokens (limit 20)
+      // Fetch recent tokens (limit 100)
       const recentParams = new URLSearchParams({
         search: '',
         sortBy: sort,
-        limit: '20'
+        limit: '100'
       });
       
       const recentResponse = await fetch(`/api/get-tokens?${recentParams}`);
