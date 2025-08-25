@@ -61,80 +61,80 @@ export default function CoinPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#0a0a0a]">
         <main className="container mx-auto px-4 py-6">
           <div className="max-w-md mx-auto">
             {/* Token Header Skeleton */}
             <div className="text-center mb-6">
               <div className="mb-3">
-                <div className="w-16 h-16 bg-gray-200 rounded-full mx-auto animate-pulse"></div>
+                <div className="w-16 h-16 bg-[#1a1a1a] rounded-full mx-auto animate-pulse"></div>
               </div>
-              <div className="h-8 bg-gray-200 rounded w-24 mx-auto mb-1 animate-pulse"></div>
-              <div className="h-5 bg-gray-200 rounded w-32 mx-auto mb-1 animate-pulse"></div>
-              <div className="h-4 bg-gray-200 rounded w-48 mx-auto animate-pulse"></div>
+              <div className="h-8 bg-[#1a1a1a] rounded w-24 mx-auto mb-1 animate-pulse"></div>
+              <div className="h-5 bg-[#1a1a1a] rounded w-32 mx-auto mb-1 animate-pulse"></div>
+              <div className="h-4 bg-[#1a1a1a] rounded w-48 mx-auto animate-pulse"></div>
             </div>
 
             {/* Key Metrics Skeleton */}
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-4 shadow-sm mb-4">
+            <div className="bg-[#1a1a1a] rounded-xl p-4 mb-4">
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="h-3 bg-gray-200 rounded w-8 mx-auto mb-1 animate-pulse"></div>
-                  <div className="h-4 bg-gray-200 rounded w-12 mx-auto animate-pulse"></div>
+                  <div className="h-3 bg-[#2a2a2a] rounded w-8 mx-auto mb-1 animate-pulse"></div>
+                  <div className="h-4 bg-[#2a2a2a] rounded w-12 mx-auto animate-pulse"></div>
                 </div>
                 <div className="text-center">
-                  <div className="h-3 bg-gray-200 rounded w-10 mx-auto mb-1 animate-pulse"></div>
-                  <div className="h-4 bg-gray-200 rounded w-12 mx-auto animate-pulse"></div>
+                  <div className="h-3 bg-[#2a2a2a] rounded w-10 mx-auto mb-1 animate-pulse"></div>
+                  <div className="h-4 bg-[#2a2a2a] rounded w-12 mx-auto animate-pulse"></div>
                 </div>
                 <div className="text-center">
-                  <div className="h-3 bg-gray-200 rounded w-8 mx-auto mb-1 animate-pulse"></div>
-                  <div className="h-4 bg-gray-200 rounded w-16 mx-auto animate-pulse"></div>
+                  <div className="h-3 bg-[#2a2a2a] rounded w-8 mx-auto mb-1 animate-pulse"></div>
+                  <div className="h-4 bg-[#2a2a2a] rounded w-16 mx-auto animate-pulse"></div>
                 </div>
               </div>
             </div>
 
             {/* Contract Address Skeleton */}
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 shadow-sm mb-4">
+            <div className="bg-[#1a1a1a] rounded-xl p-3 mb-4">
               <div className="flex items-center justify-center gap-2">
-                <div className="h-4 bg-gray-200 rounded w-24 animate-pulse"></div>
-                <div className="w-3 h-3 bg-gray-200 rounded animate-pulse"></div>
+                <div className="h-4 bg-[#2a2a2a] rounded w-24 animate-pulse"></div>
+                <div className="w-3 h-3 bg-[#2a2a2a] rounded animate-pulse"></div>
               </div>
             </div>
 
             {/* Social Links Skeleton */}
             <div className="grid grid-cols-2 gap-2 mb-4">
-              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl px-3 py-2 shadow-sm">
-                <div className="h-4 bg-gray-200 rounded w-16 mx-auto animate-pulse"></div>
+              <div className="bg-[#1a1a1a] rounded-xl px-3 py-2">
+                <div className="h-4 bg-[#2a2a2a] rounded w-16 mx-auto animate-pulse"></div>
               </div>
-              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl px-3 py-2 shadow-sm">
-                <div className="h-4 bg-gray-200 rounded w-16 mx-auto animate-pulse"></div>
+              <div className="bg-[#1a1a1a] rounded-xl px-3 py-2">
+                <div className="h-4 bg-[#2a2a2a] rounded w-16 mx-auto animate-pulse"></div>
               </div>
             </div>
 
             {/* Created By Skeleton */}
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 shadow-sm mb-4">
+            <div className="bg-[#1a1a1a] rounded-xl p-3 mb-4">
               <div className="flex justify-between items-center">
                 <div>
-                  <div className="h-3 bg-gray-200 rounded w-16 mb-1 animate-pulse"></div>
-                  <div className="h-3 bg-gray-200 rounded w-12 animate-pulse"></div>
+                  <div className="h-3 bg-[#2a2a2a] rounded w-16 mb-1 animate-pulse"></div>
+                  <div className="h-3 bg-[#2a2a2a] rounded w-12 animate-pulse"></div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="h-4 bg-gray-200 rounded w-20 animate-pulse"></div>
-                  <div className="w-3 h-3 bg-gray-200 rounded animate-pulse"></div>
+                  <div className="h-4 bg-[#2a2a2a] rounded w-20 animate-pulse"></div>
+                  <div className="w-3 h-3 bg-[#2a2a2a] rounded animate-pulse"></div>
                 </div>
               </div>
             </div>
 
             {/* Total Fees Skeleton */}
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 shadow-sm mb-4">
+            <div className="bg-[#1a1a1a] rounded-xl p-3 mb-4">
               <div className="flex justify-between items-center">
-                <div className="h-3 bg-gray-200 rounded w-16 animate-pulse"></div>
-                <div className="h-4 bg-gray-200 rounded w-20 animate-pulse"></div>
+                <div className="h-3 bg-[#2a2a2a] rounded w-16 animate-pulse"></div>
+                <div className="h-4 bg-[#2a2a2a] rounded w-20 animate-pulse"></div>
               </div>
             </div>
 
             {/* Chart Skeleton */}
             <div className="mb-4">
-              <div className="h-[300px] bg-gray-200 rounded-xl animate-pulse"></div>
+              <div className="h-[300px] bg-[#1a1a1a] rounded-xl animate-pulse"></div>
             </div>
           </div>
         </main>
@@ -144,10 +144,10 @@ export default function CoinPage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#0a0a0a]">
         <main className="container mx-auto px-4 py-8">
           <div className="text-center">
-            <p className="text-red-600">{error}</p>
+            <p className="text-red-400">{error}</p>
           </div>
         </main>
       </div>
@@ -192,7 +192,7 @@ export default function CoinPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#0a0a0a]">
       <main className="container mx-auto px-4 py-6">
         <div className="max-w-md mx-auto">
           {/* Token Header */}
@@ -206,37 +206,37 @@ export default function CoinPage() {
                 />
               </div>
             )}
-            <h1 className="text-2xl font-bold text-gray-900 mb-1">
+            <h1 className="text-2xl font-bold text-white mb-1">
               ${tokenData?.symbol || 'TOKEN'}
             </h1>
-            <h2 className="text-base text-gray-600 mb-1">
+            <h2 className="text-base text-gray-400 mb-1">
               {tokenData?.name || 'Token Name'}
             </h2>
             {tokenData?.description && (
-              <p className="text-gray-500 text-xs max-w-xs mx-auto line-clamp-3 overflow-hidden">
+              <p className="text-gray-400 text-xs max-w-xs mx-auto line-clamp-3 overflow-hidden">
                 {tokenData.description}
               </p>
             )}
           </div>
 
           {/* Key Metrics */}
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-4 shadow-sm mb-4">
+          <div className="bg-[#1a1a1a] rounded-xl p-4 mb-4">
             <div className="grid grid-cols-3 gap-4">
               <div className="text-center">
-                <div className="text-xs text-gray-500 mb-1">MCAP</div>
-                <div className="text-sm font-bold text-gray-900">
+                <div className="text-xs text-gray-400 mb-1">MCAP</div>
+                <div className="text-sm font-bold text-white">
                   {formatMarketCap(tokenData?.marketCap || 0)}
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xs text-gray-500 mb-1">24H VOL</div>
-                <div className="text-sm font-bold text-gray-900">
+                <div className="text-xs text-gray-400 mb-1">24H VOL</div>
+                <div className="text-sm font-bold text-white">
                   {formatVolume(tokenData?.volume24h || 0)}
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xs text-gray-500 mb-1">PRICE</div>
-                <div className="text-sm font-bold text-gray-900">
+                <div className="text-xs text-gray-400 mb-1">PRICE</div>
+                <div className="text-sm font-bold text-white">
                   {formatPrice(tokenData?.usdPrice || 0)}
                 </div>
               </div>
@@ -244,14 +244,14 @@ export default function CoinPage() {
           </div>
 
           {/* Contract Address */}
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 shadow-sm mb-4">
+          <div className="bg-[#1a1a1a] rounded-xl p-3 mb-4">
             <div className="flex items-center justify-center gap-2">
-              <span className="font-mono text-xs text-gray-700">
+              <span className="font-mono text-xs text-gray-300">
                 {truncateAddress(baseMint)}
               </span>
               <Copy 
                 size={12} 
-                className="cursor-pointer hover:text-gray-900 transition-colors" 
+                className="cursor-pointer hover:text-white transition-colors text-gray-400"
                 onClick={handleCopyTokenAddress}
               />
             </div>
@@ -265,7 +265,7 @@ export default function CoinPage() {
                   href={tokenData.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 rounded-xl px-3 py-2 text-xs font-medium text-gray-700 transition-colors text-center flex items-center justify-center gap-2 shadow-sm"
+                  className="bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-xl px-3 py-2 text-xs font-medium text-gray-300 transition-colors text-center flex items-center justify-center gap-2"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
@@ -278,7 +278,7 @@ export default function CoinPage() {
                   href={tokenData.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 rounded-xl px-3 py-2 text-xs font-medium text-gray-700 transition-colors text-center flex items-center justify-center gap-2 shadow-sm"
+                  className="bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-xl px-3 py-2 text-xs font-medium text-gray-300 transition-colors text-center flex items-center justify-center gap-2"
                 >
                   <Globe size={16} />
                   website
@@ -288,22 +288,22 @@ export default function CoinPage() {
           )}
 
           {/* Created By */}
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 shadow-sm mb-4">
+          <div className="bg-[#1a1a1a] rounded-xl p-3 mb-4">
             <div className="flex justify-between items-center">
               <div>
-                <span className="text-gray-600 text-xs block">created by</span>
-                <span className="text-gray-600 text-xs">
+                <span className="text-gray-400 text-xs block">created by</span>
+                <span className="text-gray-400 text-xs">
                   earns {tokenData?.creatorFeesEnabled ? '25%' : '0%'}
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-sm font-medium text-gray-900 font-mono">
+                <span className="text-sm font-medium text-white font-mono">
                   {tokenData?.creator ? truncateAddress(tokenData.creator) : 'Unknown'}
                 </span>
                 {tokenData?.creator && (
                   <Copy 
                     size={12} 
-                    className="cursor-pointer hover:text-gray-900 transition-colors" 
+                    className="cursor-pointer hover:text-white transition-colors text-gray-400"
                     onClick={handleCopyCreatorAddress}
                   />
                 )}
@@ -312,10 +312,10 @@ export default function CoinPage() {
           </div>
 
           {/* Total Fees Earned */}
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 shadow-sm mb-4">
+          <div className="bg-[#1a1a1a] rounded-xl p-3 mb-4">
             <div className="flex justify-between items-center">
-              <span className="text-gray-600 text-xs">total raised</span>
-              <span className="text-sm font-bold text-gray-900">
+              <span className="text-gray-400 text-xs">total raised</span>
+              <span className="text-sm font-bold text-white">
                 {formatFees(tokenData?.totalTradingFees || 0)}
               </span>
             </div>
@@ -323,7 +323,7 @@ export default function CoinPage() {
 
           {/* Price Chart */}
           <div className="mb-4">
-            <GMGNChart tokenAddress={baseMint} theme="light" interval="15" height={300} />
+            <GMGNChart tokenAddress={baseMint} theme="dark" interval="15" height={300} />
           </div>
         </div>
       </main>

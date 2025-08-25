@@ -3,11 +3,12 @@
 import { useWallet } from '@solana/wallet-adapter-react';
 import { useWalletModal } from '@solana/wallet-adapter-react-ui';
 import { SignOut } from 'phosphor-react';
-import Link from 'next/link';
+import { useState } from 'react';
 
 export default function WalletButton() {
   const { connected, publicKey, disconnect } = useWallet();
   const { setVisible } = useWalletModal();
+  const [copied, setCopied] = useState(false);
 
   const handleConnect = () => {
     setVisible(true);
@@ -18,14 +19,30 @@ export default function WalletButton() {
     disconnect();
   };
 
+  const handleCopyAddress = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (publicKey) {
+      try {
+        await navigator.clipboard.writeText(publicKey.toString());
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (err) {
+        console.error('Failed to copy address:', err);
+      }
+    }
+  };
+
   return (
     <div className="mb-4">
       <div className="flex items-center justify-center mb-3">
         {connected && publicKey ? (
-          // Connected state: Show avatar + address + SignOut icon
-          <div className="flex items-center text-md px-4 py-2 rounded-lg transition-colors min-w-[140px] justify-center text-black hover:bg-gray-100">
-            <div className="w-4 h-4 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full mr-2"></div>
-            <span className="text-sm mr-2">
+          // Connected state: Show address + SignOut icon
+          <div className="flex items-center text-md px-4 py-2 bg-[#1a1a1a] rounded-lg transition-colors min-w-[140px] justify-center text-white hover:bg-[#2a2a2a]">
+            <span 
+              className="text-sm mr-2 cursor-pointer hover:text-blue-400 transition-colors flex-1"
+              onClick={handleCopyAddress}
+              title="Click to copy full address"
+            >
               {publicKey.toString().slice(0, 4)}...{publicKey.toString().slice(-4)}
             </span>
             <SignOut 
@@ -37,7 +54,7 @@ export default function WalletButton() {
           // Disconnected state: Show wallet icon + text
           <button 
             onClick={handleConnect}
-            className="flex items-center text-md px-4 py-2 rounded-lg transition-colors min-w-[140px] justify-center text-black hover:bg-gray-100 cursor-pointer"
+            className="flex items-center text-md px-4 py-2 bg-[#1a1a1a] rounded-lg transition-colors min-w-[140px] justify-center text-white hover:bg-[#2a2a2a] cursor-pointer"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -59,15 +76,6 @@ export default function WalletButton() {
         )}
       </div>
       
-      {/* Terms and Privacy Policy Links */}
-      <div className="flex justify-center space-x-6 text-xs text-gray-500">
-        <Link href="/terms" className="hover:text-gray-700 transition-colors cursor-pointer">
-          terms
-        </Link>
-        <Link href="/privacy" className="hover:text-gray-700 transition-colors cursor-pointer">
-          privacy policy
-        </Link>
-      </div>
     </div>
   );
 }

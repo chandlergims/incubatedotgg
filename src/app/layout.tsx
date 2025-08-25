@@ -17,21 +17,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "metpad.fun",
-  description: "The most creator-friendly token launch platform with dynamic bonding curves and meteora integration",
+  title: "incubate.gg",
+  description: "AI Agent Launchpad - Create and tokenize AI agents with dynamic bonding curves",
   icons: {
     icon: "/Untitled design (60).png",
     apple: "/Untitled design (60).png",
   },
   openGraph: {
-    title: "metpad.fun",
-    description: "The most creator-friendly token launch platform with dynamic bonding curves and meteora integration",
+    title: "incubate.gg",
+    description: "AI Agent Launchpad - Create and tokenize AI agents with dynamic bonding curves",
     images: ["/Untitled design (60).png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "metpad.fun",
-    description: "The most creator-friendly token launch platform with dynamic bonding curves and meteora integration",
+    title: "incubate.gg",
+    description: "AI Agent Launchpad - Create and tokenize AI agents with dynamic bonding curves",
     images: ["/Untitled design (60).png"],
   },
 };

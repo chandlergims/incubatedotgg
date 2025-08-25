@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useWallet } from '@solana/wallet-adapter-react';
+import { Robot } from 'phosphor-react';
 import TokenCard from '@/components/TokenCard';
 
 interface Token {
@@ -92,54 +93,48 @@ export default function Home() {
     }
   };
 
-
   return (
-    <div className="bg-white min-h-full">
+    <div className="bg-[#0a0a0a] min-h-full">
       <main className="container mx-auto px-6 py-8">
 
         {/* Loading State */}
         {loading && (
           <div className="max-w-7xl mx-auto pt-8">
+            {/* Mint Agent Button Skeleton */}
+            <div className="flex items-center justify-center mb-8">
+              <div className="h-12 bg-[#1a1a1a] rounded-xl w-40 animate-pulse"></div>
+            </div>
+
             {/* Search Bar Skeleton */}
             <div className="max-w-lg mx-auto mb-8">
               <div className="relative">
-                <div className="h-12 bg-gray-200 rounded-lg animate-pulse"></div>
+                <div className="h-12 bg-[#1a1a1a] rounded-xl animate-pulse"></div>
               </div>
             </div>
 
             {/* Recent Section Skeleton */}
             <div className="mb-6">
-              <div className="h-4 bg-gray-200 rounded w-16 animate-pulse"></div>
+              <div className="h-4 bg-[#2a2a2a] rounded w-16 animate-pulse"></div>
             </div>
             
             {/* Token Cards Skeleton - Grid Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3">
               {[...Array(12)].map((_, index) => (
                 <div
                   key={index}
-                  className="bg-white border border-gray-200 rounded-lg p-3 shadow-sm animate-pulse"
+                  className="bg-[#1a1a1a] rounded-lg p-3 animate-pulse aspect-square relative overflow-hidden"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      {/* Token Image Skeleton */}
-                      <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
-                      
-                      <div>
-                        {/* Token Symbol Skeleton */}
-                        <div className="h-4 bg-gray-200 rounded w-12 mb-1"></div>
-                        {/* Token Address Skeleton */}
-                        <div className="h-3 bg-gray-200 rounded w-16"></div>
-                      </div>
-                    </div>
-                    
-                    <div className="text-right">
-                      {/* Timestamp Skeleton */}
-                      <div className="h-3 bg-gray-200 rounded w-12 mb-1"></div>
-                      {/* Total Raised Skeleton */}
-                      <div className="h-4 bg-gray-200 rounded w-16 mb-1"></div>
-                      {/* Label Skeleton */}
-                      <div className="h-3 bg-gray-200 rounded w-14"></div>
-                    </div>
+                  {/* Token Image Skeleton - Full background */}
+                  <div className="absolute inset-0 bg-[#2a2a2a] rounded-lg"></div>
+                  
+                  {/* Overlay content at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
+                    {/* Token Symbol Skeleton */}
+                    <div className="h-4 bg-[#2a2a2a] rounded w-3/4 mb-1"></div>
+                    {/* Token Address Skeleton */}
+                    <div className="h-3 bg-[#2a2a2a] rounded w-1/2 mb-1"></div>
+                    {/* Creator Fees Skeleton */}
+                    <div className="h-3 bg-[#2a2a2a] rounded w-2/3"></div>
                   </div>
                 </div>
               ))}
@@ -150,10 +145,10 @@ export default function Home() {
         {/* Error State */}
         {error && !loading && (
           <div className="text-center py-12">
-            <p className="text-red-600 mb-4">{error}</p>
+            <p className="text-red-400 mb-4">{error}</p>
             <button
               onClick={() => fetchTokens(sortBy)}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors"
+              className="bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white px-4 py-2 rounded-lg transition-colors"
             >
               Try Again
             </button>
@@ -168,41 +163,57 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2 2v-5m16 0h-2M4 13h2m13-8V4a1 1 0 00-1-1H7a1 1 0 00-1 1v1m8 0V4a1 1 0 00-1-1H9a1 1 0 00-1 1v1" />
               </svg>
             </div>
-            <h3 className="text-lg font-medium text-gray-900 mb-2">No tokens yet</h3>
-            <p className="text-gray-600 mb-4">
-              Be the first to create a token on our platform!
+            <h3 className="text-lg font-medium text-white mb-2">No agents yet</h3>
+            <p className="text-gray-400 mb-4">
+              Be the first to mint an AI agent on our platform!
             </p>
             <button
               onClick={() => router.push('/create')}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors"
+              className="bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white px-4 py-2 rounded-lg transition-colors"
             >
-              Create First Token
+              Mint First Agent
             </button>
           </div>
         )}
 
-        {/* Search Bar */}
+        {/* Header Section with Mint Agent Button */}
         {!loading && !error && (
-          <div className="max-w-lg mx-auto pt-8 mb-8">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Enter mint address..."
-                value={mintSearchQuery}
-                onChange={(e) => setMintSearchQuery(e.target.value)}
-                onKeyPress={handleKeyPress}
-                className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
-              />
-              <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-                <svg 
-                  className="h-5 w-5 text-gray-400 hover:text-gray-600 cursor-pointer" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                  onClick={handleMintSearch}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          <div className="max-w-4xl mx-auto pt-8 mb-8">
+            {/* Top button row */}
+            <div className="flex items-center justify-center mb-8">
+              <button
+                onClick={() => router.push('/create')}
+                className="flex items-center gap-2 px-6 py-3 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-xl text-white transition-colors cursor-pointer"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
+                <span className="font-medium">mint an agent</span>
+              </button>
+            </div>
+
+            {/* Search Bar */}
+            <div className="max-w-lg mx-auto">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Enter mint address..."
+                  value={mintSearchQuery}
+                  onChange={(e) => setMintSearchQuery(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  className="w-full px-4 py-3 pr-10 bg-[#1a1a1a] rounded-xl text-white placeholder-gray-400 focus:ring-0 focus:outline-none"
+                />
+                <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
+                  <svg 
+                    className="h-5 w-5 text-gray-400 hover:text-gray-600 cursor-pointer" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                    onClick={handleMintSearch}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -211,6 +222,32 @@ export default function Home() {
         {/* Tokens List */}
         {!loading && !error && filteredTokens.length > 0 && (
           <div className="max-w-7xl mx-auto pt-8">
+            {/* Agents We Brought to Life Section */}
+            <div className="mb-8">
+              <h2 className="text-gray-400 text-sm font-bold uppercase tracking-wider mb-6">
+                AGENTS WE BROUGHT TO LIFE
+              </h2>
+              <div className="bg-[#1a1a1a] rounded-lg p-6 text-center">
+                <div className="w-16 h-16 bg-[#2a2a2a] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Robot className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-white text-lg font-semibold mb-2">No Agents Yet</h3>
+                <p className="text-gray-400 text-sm">
+                  Incubated agents show up here. Learn how you can have your agent incubated and brought to life.
+                  <br />
+                  <button
+                    onClick={() => {
+                      // Trigger the sidebar modal by dispatching a custom event
+                      window.dispatchEvent(new CustomEvent('openIncubationTips'));
+                    }}
+                    className="text-white hover:text-gray-300 transition-colors cursor-pointer"
+                  >
+                    Incubation Tips
+                  </button>
+                </p>
+              </div>
+            </div>
+
             {/* Recent Tokens Section */}
             <div className="mb-6">
               <h2 className="text-gray-400 text-sm font-bold uppercase tracking-wider">
@@ -218,7 +255,7 @@ export default function Home() {
               </h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3">
               {filteredTokens.map((token: Token) => (
                 <TokenCard key={token.id} token={token} />
               ))}

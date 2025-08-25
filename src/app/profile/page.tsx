@@ -112,13 +112,13 @@ export default function ProfilePage() {
 
   if (!connected || !publicKey) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-xl text-gray-900 mb-4">Not authenticated, please login</h1>
+          <h1 className="text-xl text-white mb-4">Not authenticated, please login</h1>
           <div className="flex justify-center">
             <button 
               onClick={handleConnect}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg cursor-pointer"
+              className="bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white px-6 py-2 rounded-lg cursor-pointer"
             >
               Connect Wallet
             </button>
@@ -129,7 +129,7 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#0a0a0a]">
       <main className="container mx-auto px-4 py-6">
         <div className="max-w-4xl mx-auto">
           {/* Profile Header */}
@@ -141,16 +141,16 @@ export default function ProfilePage() {
             
             {/* Address and Copy */}
             <div>
-              <h1 className="text-2xl font-bold text-gray-900 mb-1">
+              <h1 className="text-2xl font-bold text-white mb-1">
                 {truncateAddress(publicKey.toString())}
               </h1>
-              <div className="flex items-center text-gray-500">
+              <div className="flex items-center text-gray-400">
                 <span className="text-sm font-mono mr-2">
                   {truncateAddress(publicKey.toString())}
                 </span>
                 <Copy 
                   size={16} 
-                  className="cursor-pointer hover:text-gray-900 transition-colors" 
+                  className="cursor-pointer hover:text-white transition-colors" 
                   onClick={handleCopyAddress}
                 />
               </div>
@@ -164,18 +164,18 @@ export default function ProfilePage() {
                 onClick={() => setActiveTab('tokens')}
                 className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-colors ${
                   activeTab === 'tokens' 
-                    ? 'bg-black text-white' 
-                    : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                    ? 'bg-white text-black' 
+                    : 'bg-[#1a1a1a] text-gray-400 hover:bg-[#2a2a2a]'
                 }`}
               >
-                tokens created
+                agents created
               </button>
               <button 
                 onClick={() => setActiveTab('portfolio')}
                 className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-colors ${
                   activeTab === 'portfolio' 
-                    ? 'bg-black text-white' 
-                    : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                    ? 'bg-white text-black' 
+                    : 'bg-[#1a1a1a] text-gray-400 hover:bg-[#2a2a2a]'
                 }`}
               >
                 wallet portfolio
@@ -184,17 +184,9 @@ export default function ProfilePage() {
           </div>
 
           {/* Fee Balance Notice */}
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 mb-6">
-            <p className="text-sm text-gray-600">
-              upon migration, the creator will receive a DAMM V2 LP position representing their share of the locked liquidity and can claim fees directly from{' '}
-              <a 
-                href="https://app.meteora.ag" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-800 no-underline"
-              >
-                app.meteora.ag
-              </a>.
+          <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] rounded-xl p-4 mb-6">
+            <p className="text-sm text-gray-300">
+              Creator fees are distributed based on AI agent performance and community engagement. Top-performing agents with strong communities are brought to life as functional AI entities.
             </p>
           </div>
 
@@ -202,14 +194,14 @@ export default function ProfilePage() {
           <div>
             {activeTab === 'portfolio' ? (
               <div className="text-center py-12">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Coming Soon</h3>
-                <p className="text-gray-600">Wallet portfolio feature is coming soon.</p>
+                <h3 className="text-xl font-semibold text-white mb-2">Coming Soon</h3>
+                <p className="text-gray-400">Wallet portfolio feature is coming soon.</p>
               </div>
             ) : loading ? (
               <div>
                 {/* Table Header */}
-                <div className="grid grid-cols-5 gap-4 px-4 py-3 text-sm font-medium text-gray-500 border-b border-gray-200">
-                  <div>token</div>
+                <div className="grid grid-cols-5 gap-4 px-4 py-3 text-sm font-medium text-gray-400 border-b border-[#1a1a1a]">
+                  <div>agent</div>
                   <div>market cap</div>
                   <div>fee authority</div>
                   <div>total fees</div>
@@ -224,22 +216,22 @@ export default function ProfilePage() {
                       className="grid grid-cols-5 gap-4 px-4 py-4 rounded-lg animate-pulse"
                     >
                       <div className="flex items-center">
-                        <div className="w-8 h-8 bg-gray-200 rounded-full mr-3"></div>
+                        <div className="w-8 h-8 bg-[#1a1a1a] rounded-full mr-3"></div>
                         <div>
-                          <div className="h-4 bg-gray-200 rounded w-16"></div>
+                          <div className="h-4 bg-[#1a1a1a] rounded w-16"></div>
                         </div>
                       </div>
                       <div className="flex items-center">
-                        <div className="h-4 bg-gray-200 rounded w-20"></div>
+                        <div className="h-4 bg-[#1a1a1a] rounded w-20"></div>
                       </div>
                       <div className="flex items-center">
-                        <div className="h-4 bg-gray-200 rounded w-12"></div>
+                        <div className="h-4 bg-[#1a1a1a] rounded w-12"></div>
                       </div>
                       <div className="flex items-center">
-                        <div className="h-4 bg-gray-200 rounded w-24"></div>
+                        <div className="h-4 bg-[#1a1a1a] rounded w-24"></div>
                       </div>
                       <div className="flex items-center">
-                        <div className="h-6 bg-gray-200 rounded-full w-16"></div>
+                        <div className="h-6 bg-[#1a1a1a] rounded-full w-16"></div>
                       </div>
                     </div>
                   ))}
@@ -248,8 +240,8 @@ export default function ProfilePage() {
             ) : userTokens.length > 0 ? (
               <div>
                 {/* Table Header */}
-                <div className="grid grid-cols-5 gap-4 px-4 py-3 text-sm font-medium text-gray-500 border-b border-gray-200">
-                  <div>token</div>
+                <div className="grid grid-cols-5 gap-4 px-4 py-3 text-sm font-medium text-gray-400 border-b border-[#1a1a1a]">
+                  <div>agent</div>
                   <div>market cap</div>
                   <div>fee authority</div>
                   <div>total fees</div>
@@ -261,7 +253,7 @@ export default function ProfilePage() {
                   {userTokens.map((token) => (
                     <div
                       key={token.id}
-                      className="grid grid-cols-5 gap-4 px-4 py-4 hover:bg-gray-50 transition-colors rounded-lg"
+                      className="grid grid-cols-5 gap-4 px-4 py-4 hover:bg-[#1a1a1a] transition-colors rounded-lg"
                     >
                       <Link href={`/coin/${token.baseMint}`} className="flex items-center">
                         {token.imageUrl && (
@@ -272,28 +264,22 @@ export default function ProfilePage() {
                           />
                         )}
                         <div>
-                          <div className="font-medium text-gray-900">{token.symbol}</div>
+                          <div className="font-medium text-white">{token.symbol}</div>
                         </div>
                       </Link>
-                      <div className="flex items-center text-gray-900">
+                      <div className="flex items-center text-white">
                         {formatMarketCap(token.marketCap || 0)}
                       </div>
-                      <div className="flex items-center text-gray-900">
+                      <div className="flex items-center text-white">
                         {token.creatorFeePercentage || 0}%
                       </div>
-                      <div className="flex items-center text-gray-900">
+                      <div className="flex items-center text-white">
                         {formatFees(token.totalTradingFees || 0)}
                       </div>
                       <div className="flex items-center">
-                        <a
-                          href="https://app.meteora.ag/portfolio"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm font-medium transition-colors"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          claim
-                        </a>
+                        <span className="bg-[#2a2a2a] text-gray-400 px-3 py-1 rounded-full text-sm font-medium">
+                          pending
+                        </span>
                       </div>
                     </div>
                   ))}
@@ -301,13 +287,13 @@ export default function ProfilePage() {
               </div>
             ) : (
               <div className="text-center py-12">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">No tokens created yet</h3>
-                <p className="text-gray-600 mb-6">You haven't created any tokens yet.</p>
+                <h3 className="text-xl font-semibold text-white mb-2">No agents created yet</h3>
+                <p className="text-gray-400 mb-6">You haven't created any AI agents yet.</p>
                 <Link
                   href="/create"
-                  className="inline-flex items-center px-6 py-3 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 transition-colors"
+                  className="inline-flex items-center px-6 py-3 bg-[#1a1a1a] text-white font-medium rounded-lg hover:bg-[#2a2a2a] transition-colors"
                 >
-                  Create Your First Token
+                  Mint Your First Agent
                 </Link>
               </div>
             )}

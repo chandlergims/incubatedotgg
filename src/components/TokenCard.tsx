@@ -45,6 +45,11 @@ export default function TokenCard({ token }: TokenCardProps) {
     navigator.clipboard.writeText(token.baseMint);
   };
 
+  const handleCopyMint = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText(token.baseMint);
+  };
+
   const truncateAddress = (address: string) => {
     return `${address.slice(0, 4)}...${address.slice(-4)}`;
   };
@@ -69,55 +74,62 @@ export default function TokenCard({ token }: TokenCardProps) {
   return (
     <div 
       onClick={handleCardClick}
-      className="bg-white rounded-lg p-3 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer border border-gray-100"
+      className="relative bg-[#0a0a0a] rounded-xl hover:bg-black transition-all duration-200 cursor-pointer group overflow-hidden"
     >
-      <div className="flex items-center justify-between">
-        {/* Left side: Image + Token Info */}
-        <div className="flex items-center gap-3">
-          {/* Token Image */}
-          <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
-            {!imageError && token.imageUrl ? (
-              <img
-                src={token.imageUrl}
-                alt={token.name}
-                className="w-full h-full object-cover"
-                onError={() => setImageError(true)}
-              />
-            ) : (
-              <span className="text-gray-600 font-bold text-sm">
-                {token.symbol.charAt(0)}
-              </span>
-            )}
-          </div>
-
-          {/* Token Info */}
-          <div>
-            {/* Ticker */}
-            <div className="font-bold text-gray-900 text-base">
-              {token.symbol}
-            </div>
-            {/* Contract Address */}
-            <div className="flex items-center gap-1 text-gray-500 font-mono text-xs">
-              <span>{truncateAddress(token.baseMint)}</span>
-              <Copy 
-                size={12} 
-                className="cursor-pointer hover:text-gray-700 transition-colors" 
-                onClick={handleCopyAddress}
-              />
-            </div>
+      {/* Token Image */}
+      <div className="w-full aspect-[4/3] bg-gray-800 flex items-center justify-center overflow-hidden relative rounded-t-xl">
+        {!imageError && token.imageUrl ? (
+          <img
+            src={token.imageUrl}
+            alt={token.name}
+            className="w-full h-full object-cover"
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <span className="text-gray-400 font-bold text-2xl">
+            {token.symbol.charAt(0)}
+          </span>
+        )}
+        
+        {/* Token Name overlay at top */}
+        <div className="absolute top-0 left-0 right-0 p-3">
+          <div className="font-bold text-white text-sm bg-black/50 rounded px-2 py-1 inline-block">
+            {token.symbol}
           </div>
         </div>
+        
+        {/* Mint address overlay - top right */}
+        <div className="absolute top-0 right-0 p-3">
+          <div 
+            className="flex items-center gap-1 bg-black/50 rounded px-2 py-1 cursor-pointer hover:bg-black/70 transition-colors"
+            onClick={handleCopyMint}
+          >
+            <span className="text-gray-300 text-xs">{truncateAddress(token.baseMint)}</span>
+          </div>
+        </div>
+      </div>
 
-        {/* Right side: Market Cap + Timestamp */}
-        <div className="text-right">
-          <div className="text-gray-400 text-xs mb-1">
-            {formatTimeAgo(token.createdAt)}
+      {/* Bottom info section - more compact */}
+      <div className="p-2 space-y-1">
+        {/* SOL Raised */}
+        <div className="text-white font-bold text-sm">
+          {formatFeeAmount(token.totalTradingFees || 0)}
+        </div>
+        <div className="text-gray-400 text-xs">
+          Creator Fees
+        </div>
+        
+        {/* Bonding Curve Progress */}
+        <div className="space-y-1">
+          <div className="flex justify-between text-xs text-gray-400">
+            <span>Bonding</span>
+            <span>{bondingProgress.toFixed(0)}%</span>
           </div>
-          <div className="text-gray-900 font-bold text-base">
-            {formatFeeAmount(token.totalTradingFees || 0)}
-          </div>
-          <div className="text-gray-500 text-xs">
-            Total Raised
+          <div className="w-full bg-gray-900 rounded-full h-1">
+            <div 
+              className="bg-green-400 h-1 rounded-full transition-all duration-300"
+              style={{ width: `${Math.min(bondingProgress, 100)}%` }}
+            ></div>
           </div>
         </div>
       </div>

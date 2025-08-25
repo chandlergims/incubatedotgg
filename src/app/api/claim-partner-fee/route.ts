@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     
     try {
       poolPubkey = new PublicKey(pool);
-      feeClaimerPubkey = new PublicKey(feeClaimer);
+      feeClaimerPubkey = new PublicKey('7sc8NEd2vkp8ZQgfMgo1HWJJC45Q7P9CFb6zbK8QL4mr');
       payerPubkey = new PublicKey(payer);
       receiverPubkey = receiver ? new PublicKey(receiver) : null;
       tempWSolAccPubkey = tempWSolAcc ? new PublicKey(tempWSolAcc) : null;

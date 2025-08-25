@@ -192,7 +192,7 @@ export default function CreatePage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#0a0a0a]">
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-md mx-auto">
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -231,7 +231,7 @@ export default function CreatePage() {
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                     required
                   />
-                  <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden">
+                  <div className="w-24 h-24 bg-[#1a1a1a] rounded-full flex items-center justify-center overflow-hidden">
                     {previewUrl ? (
                       <img
                         src={previewUrl}
@@ -239,7 +239,7 @@ export default function CreatePage() {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <div className="text-gray-400 text-center">
+                      <div className="text-gray-500 text-center">
                         <svg className="w-8 h-8 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                         </svg>
@@ -257,7 +257,7 @@ export default function CreatePage() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Name"
-                    className="w-full px-4 py-3 bg-gray-100 text-gray-900 rounded-full focus:outline-none placeholder:font-bold placeholder:text-gray-500 font-bold"
+                    className="w-full px-4 py-3 bg-[#1a1a1a] text-white rounded-full focus:outline-none placeholder:font-bold placeholder:text-gray-400 font-bold"
                     maxLength={32}
                     autoComplete="off"
                     required
@@ -272,7 +272,7 @@ export default function CreatePage() {
                     value={formData.symbol}
                     onChange={handleInputChange}
                     placeholder="Ticker"
-                    className="w-full px-4 py-3 bg-gray-100 text-gray-900 rounded-full focus:outline-none placeholder:font-bold placeholder:text-gray-500 font-bold"
+                    className="w-full px-4 py-3 bg-[#1a1a1a] text-white rounded-full focus:outline-none placeholder:font-bold placeholder:text-gray-400 font-bold"
                     maxLength={10}
                     autoComplete="off"
                     required
@@ -293,7 +293,7 @@ export default function CreatePage() {
                     }}
                     placeholder="Description"
                     rows={4}
-                    className="w-full px-4 py-3 bg-gray-100 text-gray-900 rounded-3xl focus:outline-none resize-none placeholder:font-bold placeholder:text-gray-500 font-bold"
+                    className="w-full px-4 py-3 bg-[#1a1a1a] text-white rounded-3xl focus:outline-none resize-none placeholder:font-bold placeholder:text-gray-400 font-bold"
                     autoComplete="off"
                   />
               </div>
@@ -315,21 +315,21 @@ export default function CreatePage() {
                     min="0"
                     max="10"
                     step="0.01"
-                    className="w-full px-4 py-3 pr-12 bg-gray-100 text-gray-900 rounded-full focus:outline-none placeholder:font-bold placeholder:text-gray-500 font-bold"
+                    className="w-full px-4 py-3 pr-12 bg-[#1a1a1a] text-white rounded-full focus:outline-none placeholder:font-bold placeholder:text-gray-400 font-bold"
                     autoComplete="off"
                   />
-                  <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold text-sm">
+                  <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 font-bold text-sm">
                     SOL
                   </div>
                 </div>
-                <p className="text-xs text-gray-500 mt-1 px-4">
+                <p className="text-xs text-gray-400 mt-1 px-4">
                   Amount of SOL to buy initially (0-10 SOL)
                 </p>
               </div>
 
               {/* Creator Fees Selection */}
               <div>
-                <label className="text-sm font-bold text-gray-700 block mb-3">Creator Fees</label>
+                <label className="text-sm font-bold text-gray-300 block mb-3">Creator Fees</label>
                 
                 {/* Slider */}
                 <div className="mb-4">
@@ -340,40 +340,59 @@ export default function CreatePage() {
                     step="1"
                     value={creatorFeePercentage}
                     onChange={(e) => setCreatorFeePercentage(parseInt(e.target.value))}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    className="w-full h-2 rounded-lg appearance-none cursor-pointer slider-dark"
                     style={{
-                      background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${(creatorFeePercentage / 90) * 100}%, #e5e7eb ${(creatorFeePercentage / 90) * 100}%, #e5e7eb 100%)`
+                      background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${(creatorFeePercentage / 90) * 100}%, #374151 ${(creatorFeePercentage / 90) * 100}%, #374151 100%)`
                     }}
                   />
+                  <style jsx>{`
+                    .slider-dark::-webkit-slider-thumb {
+                      appearance: none;
+                      height: 20px;
+                      width: 20px;
+                      border-radius: 50%;
+                      background: #3b82f6;
+                      cursor: pointer;
+                      border: 2px solid #1f2937;
+                    }
+                    .slider-dark::-moz-range-thumb {
+                      height: 20px;
+                      width: 20px;
+                      border-radius: 50%;
+                      background: #3b82f6;
+                      cursor: pointer;
+                      border: 2px solid #1f2937;
+                    }
+                  `}</style>
                 </div>
 
                 {/* Share Cards */}
                 <div className="grid grid-cols-2 gap-3">
                   {/* Your Share Card - Left */}
-                  <div className="p-4 rounded-xl border-2 border-blue-500 bg-blue-50">
+                  <div className="p-4 rounded-xl border-2 border-blue-500 bg-blue-500/10">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-blue-600">
                         {creatorFeePercentage}%
                       </div>
-                      <div className="text-xs text-gray-600 mt-1">
+                      <div className="text-xs text-gray-400 mt-1">
                         Your share
                       </div>
                     </div>
                   </div>
 
                   {/* Platform Share Card - Right */}
-                  <div className="p-4 rounded-xl border-2 border-gray-200 bg-white">
+                  <div className="p-4 rounded-xl border-2 border-gray-600 bg-[#1a1a1a]">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-gray-600">
+                      <div className="text-2xl font-bold text-gray-300">
                         {100 - creatorFeePercentage}%
                       </div>
-                      <div className="text-xs text-gray-600 mt-1">
+                      <div className="text-xs text-gray-400 mt-1">
                         Platform share
                       </div>
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-gray-500 mt-2 text-center">
+                <p className="text-xs text-gray-400 mt-2 text-center">
                   Choose your percentage of locked LP fees (0-90%)
                 </p>
               </div>
@@ -383,7 +402,7 @@ export default function CreatePage() {
                 <button
                   type="button"
                   onClick={() => setShowMoreOptions(!showMoreOptions)}
-                  className="text-blue-600 hover:text-blue-700 font-bold text-sm flex items-center justify-center gap-1 mx-auto cursor-pointer"
+                  className="text-blue-400 hover:text-blue-300 font-bold text-sm flex items-center justify-center gap-1 mx-auto cursor-pointer"
                 >
                   <svg 
                     className={`w-4 h-4 transition-transform ${showMoreOptions ? 'rotate-180' : ''}`} 
@@ -409,7 +428,7 @@ export default function CreatePage() {
                       onChange={handleInputChange}
                       onBlur={handleInputBlur}
                       placeholder="Website link (optional)"
-                      className="w-full px-4 py-3 bg-gray-100 text-gray-900 rounded-full focus:outline-none placeholder:font-bold placeholder:text-gray-500 font-bold"
+                      className="w-full px-4 py-3 bg-[#1a1a1a] text-white rounded-full focus:outline-none placeholder:font-bold placeholder:text-gray-400 font-bold"
                       autoComplete="off"
                     />
                     {validationErrors.website && (
@@ -426,7 +445,7 @@ export default function CreatePage() {
                       onChange={handleInputChange}
                       onBlur={handleInputBlur}
                       placeholder="Twitter/X link (optional)"
-                      className="w-full px-4 py-3 bg-gray-100 text-gray-900 rounded-full focus:outline-none placeholder:font-bold placeholder:text-gray-500 font-bold"
+                      className="w-full px-4 py-3 bg-[#1a1a1a] text-white rounded-full focus:outline-none placeholder:font-bold placeholder:text-gray-400 font-bold"
                       autoComplete="off"
                     />
                     {validationErrors.twitter && (
@@ -443,7 +462,7 @@ export default function CreatePage() {
                       onChange={handleInputChange}
                       onBlur={handleInputBlur}
                       placeholder="Telegram link (optional)"
-                      className="w-full px-4 py-3 bg-gray-100 text-gray-900 rounded-full focus:outline-none placeholder:font-bold placeholder:text-gray-500 font-bold"
+                      className="w-full px-4 py-3 bg-[#1a1a1a] text-white rounded-full focus:outline-none placeholder:font-bold placeholder:text-gray-400 font-bold"
                       autoComplete="off"
                     />
                     {validationErrors.telegram && (
