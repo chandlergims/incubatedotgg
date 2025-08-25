@@ -28,8 +28,6 @@ export default function CreatePage() {
   });
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   
-  // Check if creation is enabled
-  const creationEnabled = process.env.NEXT_PUBLIC_CREATION_ENABLED === 'true';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -478,7 +476,6 @@ export default function CreatePage() {
               <button
                 type="submit"
                 disabled={
-                  !creationEnabled ||
                   isLoading || 
                   !connected ||
                   !formData.name || 
@@ -488,7 +485,7 @@ export default function CreatePage() {
                 }
                 className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-full transition-colors text-base"
               >
-                {!creationEnabled ? 'Coming Soon' : !connected ? 'Connect Wallet First' : isLoading ? 'Creating Token...' : 'Create Token'}
+                {!connected ? 'Connect Wallet First' : isLoading ? 'Creating Token...' : 'Create Token'}
               </button>
             </form>
         </div>
