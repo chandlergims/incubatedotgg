@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { Robot } from 'phosphor-react';
+import { Robot, TwitterLogo, Globe } from 'phosphor-react';
 import TokenCard from '@/components/TokenCard';
 
 interface Token {
@@ -243,14 +243,48 @@ export default function Home() {
                   <div className="absolute inset-0 rounded-lg border-2 border-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 animate-pulse opacity-50"></div>
                   <div className="absolute inset-[2px] bg-[#1a1a1a] rounded-lg"></div>
                   
+                  {/* Agent Image Background */}
+                  <div className="absolute inset-[2px] rounded-lg overflow-hidden">
+                    <img 
+                      src="/yyBnnJ73_400x400.jpg" 
+                      alt="Myla Agent"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  </div>
+                  
                   {/* Content */}
-                  <div className="relative z-10 h-full flex flex-col items-center justify-center text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-2">
-                      <Robot className="w-6 h-6 text-white" />
+                  <div className="relative z-10 h-full flex flex-col justify-between">
+                    {/* Online Status Indicator - Top Right */}
+                    <div className="flex justify-end">
+                      <div className="w-3 h-3 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
                     </div>
-                    <h3 className="text-white text-sm font-bold mb-1">Myla</h3>
-                    <div className="text-xs text-gray-300 animate-pulse">
-                      Incubation
+                    
+                    {/* Agent Info - Bottom */}
+                    <div className="text-center">
+                      <h3 className="text-white text-sm font-bold mb-2">Myla</h3>
+                      {/* Social Icons - Under Name */}
+                      <div className="flex justify-center gap-2">
+                        <a 
+                          href="https://x.com/MylaLovesLife" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="w-6 h-6 bg-black/50 rounded-full flex items-center justify-center hover:bg-black/70 transition-colors"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" className="text-white" viewBox="0 0 16 16">
+                            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                          </svg>
+                        </a>
+                        <a 
+                          href="https://mylasworld.app/" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="w-6 h-6 bg-black/50 rounded-full flex items-center justify-center hover:bg-black/70 transition-colors"
+                        >
+                          <Globe className="w-3 h-3 text-white" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
