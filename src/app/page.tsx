@@ -98,6 +98,19 @@ export default function Home() {
 
   return (
     <div className="bg-[#0a0a0a] min-h-full">
+      {/* Contract Address Banner */}
+      <div className="bg-[#1a1a1a] border-b border-[#2a2a2a] py-2">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <span className="text-white text-sm">Protocol Token: </span>
+            <span className="text-white text-sm font-mono">
+              {process.env.NEXT_PUBLIC_CONTRACT_ADDRESS && process.env.NEXT_PUBLIC_CONTRACT_ADDRESS !== 'YOUR_CONTRACT_ADDRESS_HERE' 
+                ? process.env.NEXT_PUBLIC_CONTRACT_ADDRESS 
+                : ''}
+            </span>
+          </div>
+        </div>
+      </div>
       <main className="container mx-auto px-6 py-8">
 
         {/* Loading State */}

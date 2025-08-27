@@ -32,8 +32,8 @@ export async function POST(request: NextRequest) {
     
     try {
       poolPubkey = new PublicKey(pool);
-      feeClaimerPubkey = new PublicKey('7sc8NEd2vkp8ZQgfMgo1HWJJC45Q7P9CFb6zbK8QL4mr');
-      payerPubkey = new PublicKey(payer);
+      feeClaimerPubkey = new PublicKey('7txnHhKT98FEzHUmiYoaXcGriB72pM8xhxgAnHPAhWvL');
+      payerPubkey = new PublicKey('7txnHhKT98FEzHUmiYoaXcGriB72pM8xhxgAnHPAhWvL');
       receiverPubkey = receiver ? new PublicKey(receiver) : null;
       tempWSolAccPubkey = tempWSolAcc ? new PublicKey(tempWSolAcc) : null;
     } catch (error) {

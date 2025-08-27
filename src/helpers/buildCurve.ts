@@ -31,7 +31,7 @@ export const createCurveConfig = (creatorFeePercentage: number = 0) => {
     dynamicFeeEnabled: false,
     activationType: 0, 
     collectFeeMode: 0, 
-    migrationFeeOption: 3, 
+    migrationFeeOption: 4, 
     tokenType: 0, 
     partnerLpPercentage: 0,
     creatorLpPercentage: 0,
