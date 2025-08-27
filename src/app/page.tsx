@@ -301,6 +301,40 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+
+                {/* Blue card with incubating status */}
+                <div className="bg-[#1a1a1a] rounded-lg p-3 aspect-square relative overflow-hidden">
+                  {/* Incubating border animation - blue theme */}
+                  <div className="absolute inset-0 rounded-lg border-2 border-transparent bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 animate-pulse opacity-50"></div>
+                  <div className="absolute inset-[2px] bg-[#1a1a1a] rounded-lg"></div>
+                  
+                  {/* Agent Image Background */}
+                  <div className="absolute inset-[2px] rounded-lg overflow-hidden">
+                    <img 
+                      src="/67249994a30cdd794564cffa_39960946-573f-4ad7-b289-b0368e7db572.png" 
+                      alt="Blue Agent"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 h-full flex flex-col justify-between">
+                    {/* Incubating Status Indicator - Top Right */}
+                    <div className="flex justify-end">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full border-2 border-white animate-pulse"></div>
+                    </div>
+                    
+                    {/* Agent Info - Bottom */}
+                    <div className="text-center">
+                      <h3 className="text-white text-sm font-bold mb-2">Blue</h3>
+                      <div className="text-xs text-blue-300 animate-pulse">
+                        Incubating
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               
               <div className="text-center mt-4">
